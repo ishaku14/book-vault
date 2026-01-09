@@ -1,3 +1,6 @@
+import { products } from "../data/products.js";
+import { cart, addToCart, renderCart } from "../data/cart.js";
+
 const cartContainerElm = document.querySelector('.js-cart-container');
 const cartButtonElm = document.querySelector('.js-cart-button');
 const cartBackElm = document.querySelector('.js-cart-back');
@@ -34,3 +37,43 @@ function closeCart() {
 
 cartButtonElm.addEventListener('click', openCart);
 cartBackElm.addEventListener('click', closeCart);
+
+let productsHtml = '';
+
+products.forEach(product => {
+  productsHtml += `
+    <div class="product-card">
+      <div class="product-image-container">
+        <img class="product-image" src="${product.image}" alt="">
+      </div>
+
+      <div class="product-details">
+        <h3 class="title">${product.title}</h3>
+        <p class="author">${product.author}</p>
+
+        <div class="price-container">
+          <span class="price">$${(product.price).toFixed(2)}</span>
+          <span><img class="star-rating" src="images/icons/star-rating.png" alt="star rating image">
+            ${(product.rating).toFixed(1)}</span>
+        </div>
+
+        <button class="add-to-cart-button js-add-button" data-product-id="${product.productId}">
+          <img src="images/icons/cart-icon.png" alt="Cart icon image">
+          Add to cart
+        </button>
+      </div>
+    </div>
+  `
+});
+
+document.querySelector('.js-product-container').innerHTML = productsHtml;
+
+document.querySelectorAll('.js-add-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const productId = button.dataset.productId;
+    addToCart(productId);
+    console.log(cart);
+    document.querySelector('.js-cart-item-container').innerHTML = renderCart();
+  });
+});
+
