@@ -1,7 +1,58 @@
 body {
   background-color: rgb(240, 240, 240);
   padding: 10px 20px;
+  padding-top: 80px;
 }
+
+.bottom-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  width: 100%;
+  padding: 10px 40px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgb(206, 206, 206);
+  outline: none;
+}
+
+.search-container input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 6px 18px rgba(59,130,246,0.15);
+}
+
+.search-icon,
+.voice-search-icon {
+  height: 20px;
+  cursor: pointer;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+
+.voice-search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
 
 .categories {
   display: flex;
@@ -144,31 +195,58 @@ body {
 
 /* cart styles */
 .cart-container {
-  background-color: lightcoral;
+  background-color: rgb(248, 248, 248);
   position: fixed;
   top: 0;
   right: 0;
-  bottom: 0;
-  width: 350px;
-  padding: 1rem;
+  height: 100%;
+  width: 100vw;
+  max-width: 410px;
+  overflow-y: auto;
+  display: none;
+  /* padding: 1rem; */
+  z-index: 100;
+}
+
+.cart-container::-webkit-scrollbar {
+  display: none; /* Chrome / Safari */
+}
+
+.cart-container.open {
+  display: block;
+}
+
+.body .cart-container.open {
+  overflow: hidden;
 }
 
 .cart-header {
+  position: sticky;
+  top: 0;
   background-color: white;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
   padding: 16px;
+  border-bottom: 1px solid rgb(207, 207, 207);
+}
+
+.cart-item-container {
+  padding: 1rem;
 }
 
 .cart-item {
   background-color: white;
   display: flex;
+  gap: 16px;
   padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
 }
 
 .cart-item-image {
-  width: 70px;
+  width: 80px;
 }
 
 .item-details {
@@ -184,13 +262,17 @@ body {
   justify-content: space-between;
 }
 
+.title-container span {
+  font-weight: bold;
+}
+
 .delete-button {
   background-color: transparent;
   border: none;
 }
 
 .delete-button img {
-  height: 20px;
+  height: 16px;
 }
 
 .price-section {
@@ -216,4 +298,54 @@ body {
   margin-left: 8px;
   margin-right: 8px;
   font-weight: bold;
+}
+
+.cart-footer {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  padding: 1rem;
+  border-top: 1px solid rgb(207, 207, 207);
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.summary-label {
+  font-size: 1.1rem;
+}
+
+.summary-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.subtotal {
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
+}
+
+.total {
+  margin-bottom: 20px;
+}
+
+.total .summary-label,
+.total .summary-value{
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+.cart-actions button {
+  background-color: rgb(58, 58, 216);
+  border: none;
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 4px 12px rgba(86, 86, 211, 0.8);
 }

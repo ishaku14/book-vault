@@ -16,25 +16,106 @@
   <header class="header">
     <section class="top-section">
       <h2>Book Vault</h2>
-      <a href="#">
+      <button class="cart-icon-container js-cart-button">
         <img class="cart-icon" src="assets/icons/cart-icon.png" alt="cart icon image">
-      </a>
-    </section>
-
-    <section class="bottom-section">
-      <div class="search-container">
-        <img class="search-icon" src="assets/icons/search-icon.png" alt="search icon image">
-        <input class="search-box" type="text" placeholder="search titles, authors...">
-        <img class="voice-search-icon" src="assets/icons/voice-search-icon.svg" alt="voice search icon image">
-      </div>
+      </button>
     </section>
   </header>
 
-  <div class="cart-container">
-    <div>
-      <div class="cart-header">
-        <span>My Cart (3)</span>
-        <span>back</span>
+  <section class="bottom-section">
+    <div class="search-container">
+      <img class="search-icon" src="assets/icons/search-icon.png" alt="search icon image">
+      <input class="search-box" type="text" placeholder="search titles, authors...">
+      <img class="voice-search-icon" src="assets/icons/voice-search-icon.svg" alt="voice search icon image">
+    </div>
+  </section>
+
+  <div class="cart-backdrop"></div>
+  <div class="cart-container js-cart-container">
+    <div class="cart-header">
+      <h3>My Cart (3)</h3>
+      <span class="js-cart-back">Back</span>
+    </div>
+
+    <div class="cart-item-container">
+      <div class="cart-item">
+        <img class="cart-item-image" src="assets/images/atomic-habits.webp" alt="">
+        <div class="item-details">
+          <div class="title-container">
+            <span>Atomic Habits</span>
+            <button class="delete-button"><img class="delete-icon" src="assets/icons/delete-icon.svg" alt="a delete button"></button>
+          </div>
+          <div class="author">James Clear . <span>Hardcover</span></div>
+
+          <div class="price-section">
+            <div class="price">$12.99</div>
+            <div class="quantity-section">
+              <button>-</button>
+              <span class="quantity">1</span>
+              <button>+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-item">
+        <img class="cart-item-image" src="assets/images/davinci-deception.webp" alt="">
+        <div class="item-details">
+          <div class="title-container">
+            <span>The Da Vinci Deception</span>
+            <button class="delete-button"><img class="delete-icon" src="assets/icons/delete-icon.svg" alt="a delete button"></button>
+          </div>
+          <div class="author">Erwim W. Lutzer . <span>Hardcover</span></div>
+
+          <div class="price-section">
+            <div class="price">$29.99</div>
+            <div class="quantity-section">
+              <button>-</button>
+              <span class="quantity">1</span>
+              <button>+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-item">
+        <img class="cart-item-image" src="assets/images/TheCompoundEffect-by-DarrenHardy.webp" alt="">
+        <div class="item-details">
+          <div class="title-container">
+            <span>The Compound Effect</span>
+            <button class="delete-button"><img class="delete-icon" src="assets/icons/delete-icon.svg" alt="a delete button"></button>
+          </div>
+          <div class="author">Darren Hardy . <span>Hardcover</span></div>
+
+          <div class="price-section">
+            <div class="price">$50.00</div>
+            <div class="quantity-section">
+              <button>-</button>
+              <span class="quantity">1</span>
+              <button>+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-item">
+        <img class="cart-item-image" src="assets/images/rich-Dad-Poor-Dad.webp" alt="">
+        <div class="item-details">
+          <div class="title-container">
+            <span>Rich Dad Poor Dad</span>
+            <button class="delete-button"><img class="delete-icon" src="assets/icons/delete-icon.svg" alt="a delete button"></button>
+          </div>
+          <div class="author">Robert T. Liardon . <span>Hardcover</span></div>
+
+          <div class="price-section">
+            <div class="price">$55.00</div>
+            <div class="quantity-section">
+              <button>-</button>
+              <span class="quantity">1</span>
+              <button>+</button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="cart-item">
@@ -58,7 +139,29 @@
       </div>
     </div>
 
-    <button>Proceed to Checkout</button>
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <div class="summary-item">
+          <span class="summary-label">Delivery Fee:</span>
+          <span class="summary-value">$00</span>
+        </div>
+        <div class="summary-item subtotal">
+          <span class="summary-label">Subtotal:</span>
+          <span class="summary-value">$00</span>
+        </div>
+        <div class="summary-item total">
+          <span class="summary-label">Total:</span>
+          <span class="summary-value">$00</span>
+        </div>
+      </div>
+
+      <div class="cart-actions">
+        <a href="#">
+          <button class="btn btn-primary">Proceed to Checkout</button>
+        </a>
+      </div>
+    </div>
+    
   </div>
 
   <nav class="categories">
@@ -165,5 +268,6 @@
     </section>
   </main>
 
+  <script type="module" src="scripts/home.js"></script>
 </body>
 </html>
