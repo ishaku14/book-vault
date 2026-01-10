@@ -19,6 +19,7 @@
 }
 
 .cart-icon-container {
+  position: relative;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -26,4 +27,18 @@
 
 .cart-icon {
   height: 30px;
+}
+
+.cart-quantity {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  background-color: rgb(236, 26, 26);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 1px 4px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  display: none;
 }

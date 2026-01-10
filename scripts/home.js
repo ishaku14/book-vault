@@ -1,5 +1,5 @@
 import { products } from "../data/products.js";
-import { cart, addToCart, renderCart } from "../data/cart.js";
+import { cart, addToCart, removeFromCart, renderCart, updateCartQuantity } from "../data/cart.js";
 
 const cartContainerElm = document.querySelector('.js-cart-container');
 const cartButtonElm = document.querySelector('.js-cart-button');
@@ -72,8 +72,8 @@ document.querySelectorAll('.js-add-button').forEach(button => {
   button.addEventListener('click', () => {
     const productId = button.dataset.productId;
     addToCart(productId);
-    console.log(cart);
-    document.querySelector('.js-cart-item-container').innerHTML = renderCart();
+    updateCartQuantity();
+    renderCart();
   });
 });
 

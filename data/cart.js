@@ -13,6 +13,29 @@ export function addToCart(productId) {
 
 }
 
+export function removeFromCart(productId) {
+  const itemIndex = cart.findIndex(cartItem => cartItem.productId === productId);
+  cart.splice(itemIndex, 1);
+  renderCart();
+}
+
+export function updateCartQuantity() {
+  let totalQuantity = 0;
+  cart.forEach(cartItem => {
+    totalQuantity += 1
+  });
+
+  document.querySelectorAll('.js-cart-quantity').forEach(element => {
+    if(totalQuantity) {
+      element.style.display = 'inline'
+      element.textContent = totalQuantity;
+    } else {
+      element.style.display = 'none';
+    }
+    
+  });
+}
+
 export function renderCart() {
   let cartHtml = '';
 
@@ -21,15 +44,15 @@ export function renderCart() {
 
     const matchingProduct = products.find(product => product.productId === productId);
 
-    console.log(productId, matchingProduct)
-
     cartHtml += `
       <div class="cart-item">
         <img class="cart-item-image" src="${matchingProduct.image}" alt="">
         <div class="item-details">
           <div class="title-container">
             <span>${matchingProduct.title}</span>
-            <button class="delete-button"><img class="delete-icon" src="assets/icons/delete-icon.svg" alt="a delete button"></button>
+            <button class="delete-button js-delete-button" data-product-id="${matchingProduct.productId}">
+              <img class="delete-icon" src="images/icons/delete-icon.svg" alt="a delete button">
+            </button>
           </div>
           <div class="author">${matchingProduct.author} . <span>Hardcover</span></div>
 
@@ -46,5 +69,13 @@ export function renderCart() {
     `;
   });
 
-  return cartHtml;
+  document.querySelector('.js-cart-item-container').innerHTML = cartHtml;
+
+  document.querySelectorAll('.js-delete-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const productId = button.dataset.productId;
+      removeFromCart(productId);
+      updateCartQuantity();
+    })
+  });
 }
