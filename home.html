@@ -41,41 +41,38 @@
     <div class="cart-item-container js-cart-item-container">
     </div>
 
-    <div class="cart-footer">
-      <div class="cart-summary">
-        <div class="summary-item">
-          <span class="summary-label">Delivery Fee:</span>
-          <span class="summary-value">$00</span>
-        </div>
-        <div class="summary-item subtotal">
-          <span class="summary-label">Subtotal:</span>
-          <span class="summary-value">$00</span>
-        </div>
-        <div class="summary-item total">
-          <span class="summary-label">Total:</span>
-          <span class="summary-value">$00</span>
-        </div>
-      </div>
-
-      <div class="cart-actions">
-        <a href="#">
-          <button class="btn btn-primary">Proceed to Checkout</button>
-        </a>
-      </div>
+    <div class="cart-footer js-cart-footer">
     </div>
     
   </div>
 
-  <nav class="categories">
-    <button>Fiction</button>
-    <button>Religion & Spirituality</button>
-    <button>Finance</button>
-    <button>Self-help</button>
-    <button>History</button>
-    <button>Sci-Fi</button>
-    <button>Biography</button>
-    <button>Romance</button>
-  </nav>
+  
+
+  <div class="category-toggle">
+    <input type="radio" name="category" id="all-category" value="first" checked>
+    <label for="all-category">All Categories</label>
+
+    <input type="radio" name="category" id="finance" value="finance">
+    <label for="finance">Finance</label>
+
+    <input type="radio" name="category" id="sci-fi" value="sci-fi">
+    <label for="sci-fi">Sci-FI</label>
+
+    <input type="radio" name="category" id="religion" value="religion">
+    <label for="religion">Religion & Spirituality</label>
+
+    <input type="radio" name="category" id="self-help" value="self-help">
+    <label for="self-help">Self-help</label>
+
+    <input type="radio" name="category" id="history" value="history">
+    <label for="history">History</label>
+
+    <input type="radio" name="category" id="romance" value="romans">
+    <label for="romance">Romance</label>
+
+    <input type="radio" name="category" id="biography" value="biography">
+    <label for="biography">Biography</label>
+  </div>
 
   <main class="main-content">
     <h3>New Arrivals</h3>
