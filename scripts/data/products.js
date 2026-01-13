@@ -27,7 +27,7 @@ export const products = [
     price: 5000,
     deliveryFee: 1.5,
     rating: 4.2,
-    category: 'Religion & Spirituality'
+    category: 'religion'
   },
   {
     productId: 'bk-12wdjeujdkw-3eyhehw',
@@ -37,7 +37,7 @@ export const products = [
     price: 10000,
     deliveryFee: 2.5,
     rating: 4.,
-    category: 'Finance'
+    category: 'finance'
   },
 
   {
@@ -59,7 +59,7 @@ export const products = [
     price: 9000,
     rating: 4.7,
     deliveryFee: 2.5,
-    category: 'Finance'
+    category: 'finance'
   },
 
   {
@@ -70,7 +70,7 @@ export const products = [
     price: 7500,
     rating: 4.6,
     deliveryFee: 2.0,
-    category: 'Finance'
+    category: 'finance'
   },
   {
     productId: 'bk-12wdjeujdkw-83yeheh',
@@ -80,7 +80,7 @@ export const products = [
     price: 8500,
     rating: 4.5,
     deliveryFee: 2.0,
-    category: 'Religion & Spirituality'
+    category: 'religion'
   },
   {
     productId: 'bk-12wdjeujdkw-93yeheh',
@@ -90,7 +90,7 @@ export const products = [
     price: 6000,
     rating: 4.4,
     deliveryFee: 1.8,
-    category: 'Religion & Spirituality'
+    category: 'religion'
   },
   {
     productId: 'bk-12wdjeujdkw-103yeheh',
@@ -100,7 +100,7 @@ export const products = [
     price: 7200,
     rating: 4.3,
     deliveryFee: 1.9,
-    category: 'Finance'
+    category: 'finance'
   },
 
   {
@@ -111,7 +111,7 @@ export const products = [
     price: 9500,
     rating: 4.8,
     deliveryFee: 2.3,
-    category: 'Finance'
+    category: 'finance'
   },
   {
     productId: 'bk-12wdjeujdkw-123yeheh',
@@ -141,7 +141,7 @@ export const products = [
     price: 5800,
     rating: 4.5,
     deliveryFee: 1.7,
-    category: 'Religion & Spirituality'
+    category: 'religion'
   },
   {
     productId: 'bk-12wdjeujdkw-153yeheh',
@@ -151,6 +151,6 @@ export const products = [
     price: 6400,
     rating: 4.4,
     deliveryFee: 1.9,
-    category: 'Religion & Spirituality'
+    category: 'religion'
   }
 ];

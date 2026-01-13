@@ -75,7 +75,7 @@ export function renderCart() {
           <div class="author">${matchingProduct.author} . <span>Hardcover</span></div>
 
           <div class="price-section">
-            <div class="price">$${(matchingProduct.price).toFixed(2)}</div>
+            <div class="price">₦${(matchingProduct.price)}</div>
             <div class="quantity-section">
               <button class="js-minus-button" data-id=${matchingProduct.productId}>-</button>
               <span class="quantity">${cartItem.quantity}</span>
