@@ -1,6 +1,12 @@
 import { products } from "./products.js";
 
-export const cart = [];
+export const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+renderCart();
+
+function saveToStorage() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
 
 export function addToCart(productId) {
   const matchingItem = cart.find(cartItem => (productId === cartItem.productId));
@@ -10,12 +16,14 @@ export function addToCart(productId) {
   } else {
     cart.push({ productId, quantity: 1 })
   }
-
+  
+  saveToStorage();
 }
 
 export function removeFromCart(productId) {
   const itemIndex = cart.findIndex(cartItem => cartItem.productId === productId);
   cart.splice(itemIndex, 1);
+  saveToStorage();
   renderCart();
 }
 
@@ -35,11 +43,13 @@ export function updateCartQuantity() {
     
   });
 }
+updateCartQuantity();
 
 function icreaseItemQuantity(productId) {
   const matchingProduct = cart.find(cartItem => cartItem.productId === productId);
 
   matchingProduct.quantity +=1;
+  saveToStorage();
   renderCart();
 }
 
@@ -51,6 +61,7 @@ function decreaseItemQuantity(productId) {
   }
 
   matchingProduct.quantity -=1;
+  saveToStorage();
   renderCart();
 }
 
@@ -133,15 +144,15 @@ export function renderCartFooter() {
     <div class="cart-summary">
       <div class="summary-item">
         <span class="summary-label">Delivery Fee:</span>
-        <span class="summary-value delivery-fee">$${(deliveryFee).toFixed(2)}</span>
+        <span class="summary-value delivery-fee">₦${(deliveryFee).toFixed(2)}</span>
       </div>
       <div class="summary-item subtotal">
         <span class="summary-label">Subtotal:</span>
-        <span class="summary-value sub-total">$${(productsPrice).toFixed(2)}</span>
+        <span class="summary-value sub-total">₦${(productsPrice).toFixed(2)}</span>
       </div>
       <div class="summary-item total">
         <span class="summary-label">Total:</span>
-        <span class="summary-value">$${(totalPrice).toFixed(2)}</span>
+        <span class="summary-value">₦${(totalPrice).toFixed(2)}</span>
       </div>
     </div>
 
