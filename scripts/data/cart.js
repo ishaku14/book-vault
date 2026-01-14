@@ -1,4 +1,5 @@
 import { products } from "./products.js";
+import { formatPrice } from "../utils/money.js";
 
 export const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -86,7 +87,7 @@ export function renderCart() {
           <div class="author">${matchingProduct.author} . <span>Hardcover</span></div>
 
           <div class="price-section">
-            <div class="price">₦${(matchingProduct.price)}</div>
+            <div class="price">${formatPrice(matchingProduct.price)}</div>
             <div class="quantity-section">
               <button class="js-minus-button" data-id=${matchingProduct.productId}>-</button>
               <span class="quantity">${cartItem.quantity}</span>
@@ -144,15 +145,15 @@ export function renderCartFooter() {
     <div class="cart-summary">
       <div class="summary-item">
         <span class="summary-label">Delivery Fee:</span>
-        <span class="summary-value delivery-fee">₦${(deliveryFee).toFixed(2)}</span>
+        <span class="summary-value delivery-fee">₦${formatPrice(deliveryFee)}</span>
       </div>
       <div class="summary-item subtotal">
         <span class="summary-label">Subtotal:</span>
-        <span class="summary-value sub-total">₦${(productsPrice).toFixed(2)}</span>
+        <span class="summary-value sub-total">${formatPrice(productsPrice)}</span>
       </div>
       <div class="summary-item total">
         <span class="summary-label">Total:</span>
-        <span class="summary-value">₦${(totalPrice).toFixed(2)}</span>
+        <span class="summary-value">${formatPrice(totalPrice)}</span>
       </div>
     </div>
 
