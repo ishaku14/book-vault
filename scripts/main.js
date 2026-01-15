@@ -5,6 +5,8 @@ import { formatPrice } from './utils/money.js';
 const cartContainerElm = document.querySelector('.js-cart-container');
 const cartButtonElm = document.querySelector('.js-cart-button');
 const cartBackElm = document.querySelector('.js-cart-back');
+const detailsElm = document.getElementById('modal');
+const backDropElm = document.querySelector('.js-cart-backdrop');
 
 let scrollY = 0;
 
@@ -31,12 +33,14 @@ function unlockBodyScroll() {
 function openCart() {
   lockBodyScroll();
   cartContainerElm.classList.toggle('open');
+  backDropElm.classList.toggle('open')
   document.body.classList.add('cart-container-open');
 }
 
 function closeCart() {
   unlockBodyScroll();
   cartContainerElm.classList.remove('open');
+  backDropElm.classList.remove('open');
   document.body.classList.remove('cart-container-open');
 }
 
@@ -64,12 +68,11 @@ function renderProducts() {
       return product.category === state.category;
     });
   }
-  console.log(filteredProducts);
 
   filteredProducts.forEach(product => {
     productsHtml += `
       <div class="product-card">
-        <div class="product-image-container">
+        <div class="product-image-container js-image-container" data-id=${product.productId}>
           <img class="product-image" src="${product.image}" alt="">
         </div>
 
@@ -103,5 +106,71 @@ function renderProducts() {
       renderCartFooter();
     });
   });
+  
+  document.querySelectorAll('.js-image-container').forEach(element => {
+    element.addEventListener('click', () => {
+      const productId = element.dataset.id;
+      renderProductDetails(productId);
+      showDetails();
+      lockBodyScroll();
+    });
+  });
+  
 }
 renderProducts();
+
+function showDetails() {
+  detailsElm.classList.toggle('open');
+}
+
+function closeDetails() {
+  detailsElm.classList.remove('open');
+}
+
+function renderProductDetails(productId) {
+  const matchingProduct = products.find(product => product.productId === productId);
+  
+  let detailsHtml = `
+    <div class="book-details">
+      <button class="close-modal"><img class="close-icon" src="images/icons/close-icon.svg" alt=""></button>
+      <div class="img-container">
+        <img src=${matchingProduct.image} alt="a book image">
+      </div>
+          
+      <h1>${matchingProduct.title}</h1>
+      <div class="author">
+        by ${matchingProduct.author}
+      </div>
+          
+      <div class="ratings">
+        <strong>${(matchingProduct.rating).toFixed(2)}</strong>
+        <img class="star-rating" src="images/icons/star-rating.png" alt="">
+      </div>
+          
+      <div class="desc-section">
+        <h3>Description</h3>
+        <p class="description">
+          ${matchingProduct.description}
+        </p>
+      </div>
+          
+      <div class="bottom-bar">
+        <div>
+          Total Price
+          <strong>${formatPrice(matchingProduct.price)}</strong>
+        </div>
+        <button class="add-button">
+          <img class="cart-icon" src="images/icons/icons-cart.png" alt="a cart icon image">
+              Add to Cart
+        </button>
+      </div>
+    </div>
+  `;
+  
+  document.querySelector('.js-product-details-container').innerHTML = detailsHtml;
+  
+  document.querySelector('.close-modal').addEventListener('click', () => {
+    closeDetails();
+    unlockBodyScroll();
+  })
+}

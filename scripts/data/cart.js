@@ -145,7 +145,7 @@ export function renderCartFooter() {
     <div class="cart-summary">
       <div class="summary-item">
         <span class="summary-label">Delivery Fee:</span>
-        <span class="summary-value delivery-fee">₦${formatPrice(deliveryFee)}</span>
+        <span class="summary-value delivery-fee">${formatPrice(deliveryFee)}</span>
       </div>
       <div class="summary-item subtotal">
         <span class="summary-label">Subtotal:</span>
