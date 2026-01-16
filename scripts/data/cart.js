@@ -1,5 +1,6 @@
 import { products } from "./products.js";
 import { formatPrice } from "../utils/money.js";
+import { changeButtonContent } from "../main.js";
 
 export const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -74,9 +75,14 @@ export function renderCart() {
 
     const matchingProduct = products.find(product => product.productId === productId);
 
+    if(!matchingProduct) {
+      removeFromCart(productId);
+      return;
+    }
+
     cartHtml += `
       <div class="cart-item">
-        <img class="cart-item-image" src="${matchingProduct.image}" alt="">
+        <img class="cart-item-image" src=${matchingProduct.image}>
         <div class="item-details">
           <div class="title-container">
             <span>${matchingProduct.title}</span>

@@ -1,0 +1,70 @@
+.footer {
+  background-color: rgb(226, 226, 226);
+  padding: 2rem;
+  position: static;
+  box-sizing: border-box;
+  bottom: 0;
+  left: -20px;
+  right: -20px;
+  width: 100%;
+}
+
+.logo-section {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid black;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.logo-section img {
+  width: 28px;
+}
+
+.contacts {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.contacts img {
+  width: 18px;
+}
+
+.contacts div {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+
+}
+
+.footer-links {
+  padding-top: 1rem;
+  display: flex;
+  gap: 30px;
+}
+
+
+.footer-links .quick-links {
+  margin-top: 8px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quick-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.quick-links a:hover {
+  text-decoration: underline;
+}
+
+.inc-date {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 20px;
+  color: rgb(65, 65, 65);
+}

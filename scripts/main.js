@@ -44,6 +44,15 @@ function closeCart() {
   document.body.classList.remove('cart-container-open');
 }
 
+export function changeButtonContent(button) {
+  button.innerHTML = `<img class="checkmark" src="images/icons/checkmark-icon.svg"> Added`;
+
+  setTimeout(() => {
+    button.innerHTML = `<img class="cart-icon" src="images/icons/icons-cart.png" alt="Cart icon image">Add to cart`;
+  }, 1500);
+
+}
+
 cartButtonElm.addEventListener('click', openCart);
 cartBackElm.addEventListener('click', closeCart);
 
@@ -87,18 +96,20 @@ function renderProducts() {
           </div>
 
           <button class="add-to-cart-button js-add-button" data-product-id="${product.productId}">
-            <img src="images/icons/cart-icon.png" alt="Cart icon image">
+            <img class="cart-icon" src="images/icons/icons-cart.png" alt="Cart icon image">
             Add to cart
           </button>
         </div>
       </div>
-    `
+    `;
   });
 
-  document.querySelector('.js-product-container').innerHTML = productsHtml;
+  document.querySelector('.js-product-container').innerHTML = productsHtml || `<div>Not Available</div>`;
 
   document.querySelectorAll('.js-add-button').forEach(button => {
     button.addEventListener('click', () => {
+      changeButtonContent(button);
+
       const productId = button.dataset.productId;
       addToCart(productId);
       updateCartQuantity();
@@ -156,10 +167,10 @@ function renderProductDetails(productId) {
           
       <div class="bottom-bar">
         <div>
-          Total Price
+          <span class="total-price">Total Price</span>
           <strong>${formatPrice(matchingProduct.price)}</strong>
         </div>
-        <button class="add-button">
+        <button class="add-button js-add-button" data-id=${matchingProduct.productId}>
           <img class="cart-icon" src="images/icons/icons-cart.png" alt="a cart icon image">
               Add to Cart
         </button>
@@ -172,5 +183,16 @@ function renderProductDetails(productId) {
   document.querySelector('.close-modal').addEventListener('click', () => {
     closeDetails();
     unlockBodyScroll();
+  });
+
+  document.querySelectorAll('.js-add-button').forEach(button => {
+    button.addEventListener('click', () => {
+      changeButtonContent(button)
+      const productId = button.dataset.id;
+      addToCart(productId);
+      updateCartQuantity();
+      renderCart();
+      renderCartFooter();
+    })
   })
 }

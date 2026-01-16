@@ -12,7 +12,7 @@ export const products = [
   },
   {
     productId: 'bk-123dddkdkdd-374ruej',
-    image: 'images/products/TheCompoundEffect-by-DarrenHardy.webp',
+    image: 'images/products/the-c-effect.webp',
     title: 'The Compound Effect',
     author: 'Darren Hardy',
     price: 7000,
@@ -20,6 +20,77 @@ export const products = [
     deliveryFee: 2,
     category: 'self-help',
     description: "The Compound Effect was written by Darren Hardy to teach that success comes from consistent small actions over time. Hardy wrote it to counter the idea of overnight success and to promote discipline and accountability. The book has become a bestseller with hundreds of thousands of copies sold."
+  },
+
+  {
+    productId: 'bk-12wdjeujdkw-63yeheh',
+    image: 'images/products/the-psychology-of-money.png',
+    title: 'The Psychology of Money',
+    author: 'Morgan Housel',
+    price: 7500,
+    rating: 4.6,
+    deliveryFee: 2.0,
+    category: 'finance',
+    description: "Morgan Housel wrote this book to explain that money decisions are emotional more than mathematical. It was written to share timeless lessons about wealth, greed, and happiness. The book became a global bestseller with millions of readers."
+  },
+
+  {
+    productId: 'bk-12wdjeujdkw-113yeheh',
+    image: 'images/products/intelligent-investor.webp',
+    title: 'The Intelligent Investor',
+    author: 'Benjamin Graham',
+    price: 9500,
+    rating: 4.8,
+    deliveryFee: 2.3,
+    category: 'finance',
+    description: "Benjamin Graham wrote this classic to teach value investing principles. It was created after the Great Depression to help investors avoid speculation. The book has sold millions of copies and influenced investors like Warren Buffett."
+  },
+  {
+    productId: 'bk-12wdjeujdkw-123yeheh',
+    image: 'images/products/think-and-grow-rich.webp',
+    title: 'Think and Grow Rich',
+    author: 'Napoleon Hill',
+    price: 6800,
+    rating: 4.7,
+    deliveryFee: 2.1,
+    category: 'self-help',
+    description: "Napoleon Hill wrote this book after studying successful people like Andrew Carnegie. It was written to reveal the mindset behind wealth and achievement. The book has sold over 100 million copies since its release."
+  },
+
+  {
+    productId: 'bk-12wdjeujdkw-103yeheh',
+    image: 'images/products/profit-first.webp',
+    title: 'Profit First',
+    author: 'Mike Michalowicz',
+    price: 7200,
+    rating: 4.3,
+    deliveryFee: 1.9,
+    category: 'finance',
+    description: "Profit First was written by Mike Michalowicz to help businesses become profitable from day one. It was written to reverse traditional accounting logic and prioritize profit. The book has sold hundreds of thousands of copies among entrepreneurs."
+  },
+
+  {
+    productId: 'bk-12wdjeujdkw-153yeheh',
+    image: 'images/products/4-keys-to-hearing-God.webp',
+    title: 'The 4 Keys To Hearing God',
+    author: 'Mark Virkler',
+    price: 6400,
+    rating: 4.4,
+    deliveryFee: 1.9,
+    category: 'religion',
+    description: "Mark Virkler wrote this book to help believers recognize God’s voice. It was written as a practical guide to spiritual communication. The book has sold widely through Christian training programs."
+  },
+
+  {
+    productId: 'bk-12wdjeujdkw-133yeheh',
+    image: 'images/products/imgi_172_21bookkeefe1-videosixteenbyninejumbo1600.webp',
+    title: 'Say Nothing',
+    author: 'Patrich Radden Keefe',
+    price: 11000,
+    rating: 4.6,
+    deliveryFee: 2.4,
+    category: 'History',
+    description: "Patrick Radden Keefe wrote Say Nothing to document the human stories behind the Northern Ireland conflict. It was written after years of investigative research. The book became an award-winning international bestseller."
   },
   
   {
@@ -71,17 +142,6 @@ export const products = [
   },
 
   {
-    productId: 'bk-12wdjeujdkw-63yeheh',
-    image: 'images/products/psychology-of-money.webp',
-    title: 'The Psychology of Money',
-    author: 'Morgan Housel',
-    price: 7500,
-    rating: 4.6,
-    deliveryFee: 2.0,
-    category: 'finance',
-    description: "Morgan Housel wrote this book to explain that money decisions are emotional more than mathematical. It was written to share timeless lessons about wealth, greed, and happiness. The book became a global bestseller with millions of readers."
-  },
-  {
     productId: 'bk-12wdjeujdkw-83yeheh',
     image: 'images/products/the-believers-authority.webp',
     title: `The Believer's Authority`,
@@ -103,51 +163,7 @@ export const products = [
     category: 'religion',
     description: "This book was written by Andrew Wommack to explain the three-part nature of man from a Christian perspective. It was created to help believers understand how spiritual growth works."
   },
-  {
-    productId: 'bk-12wdjeujdkw-103yeheh',
-    image: 'images/products/profit-first.webp',
-    title: 'Profit First',
-    author: 'Mike Michalowicz',
-    price: 7200,
-    rating: 4.3,
-    deliveryFee: 1.9,
-    category: 'finance',
-    description: "Profit First was written by Mike Michalowicz to help businesses become profitable from day one. It was written to reverse traditional accounting logic and prioritize profit. The book has sold hundreds of thousands of copies among entrepreneurs."
-  },
-
-  {
-    productId: 'bk-12wdjeujdkw-113yeheh',
-    image: 'images/products/intelligent-investor.webp',
-    title: 'The Intelligent Investor',
-    author: 'Benjamin Graham',
-    price: 9500,
-    rating: 4.8,
-    deliveryFee: 2.3,
-    category: 'finance',
-    description: "Benjamin Graham wrote this classic to teach value investing principles. It was created after the Great Depression to help investors avoid speculation. The book has sold millions of copies and influenced investors like Warren Buffett."
-  },
-  {
-    productId: 'bk-12wdjeujdkw-123yeheh',
-    image: 'images/products/think-and-grow-rich.webp',
-    title: 'Think and Grow Rich',
-    author: 'Napoleon Hill',
-    price: 6800,
-    rating: 4.7,
-    deliveryFee: 2.1,
-    category: 'self-help',
-    description: "Napoleon Hill wrote this book after studying successful people like Andrew Carnegie. It was written to reveal the mindset behind wealth and achievement. The book has sold over 100 million copies since its release."
-  }, 
-  {
-    productId: 'bk-12wdjeujdkw-133yeheh',
-    image: 'images/products/imgi_172_21bookkeefe1-videosixteenbyninejumbo1600.webp',
-    title: 'Say Nothing',
-    author: 'Patrich Radden Keefe',
-    price: 11000,
-    rating: 4.6,
-    deliveryFee: 2.4,
-    category: 'History',
-    description: "Patrick Radden Keefe wrote Say Nothing to document the human stories behind the Northern Ireland conflict. It was written after years of investigative research. The book became an award-winning international bestseller."
-  },
+  
   {
     productId: 'bk-12wdjeujdkw-143yeheh',
     image: 'images/products/tongues.webp',
@@ -158,16 +174,5 @@ export const products = [
     deliveryFee: 1.7,
     category: 'religion',
     description: "Kenneth E. Hagin wrote this book to explain the biblical purpose of speaking in tongues. It was written to clear confusion about Pentecostal experience."
-  },
-  {
-    productId: 'bk-12wdjeujdkw-153yeheh',
-    image: 'images/products/4-keys-to-hearing-God.webp',
-    title: 'The 4 Keys To Hearing God',
-    author: 'Mark Virkler',
-    price: 6400,
-    rating: 4.4,
-    deliveryFee: 1.9,
-    category: 'religion',
-    description: "Mark Virkler wrote this book to help believers recognize God’s voice. It was written as a practical guide to spiritual communication. The book has sold widely through Christian training programs."
   }
 ];
