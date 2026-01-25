@@ -1,15 +1,16 @@
 import { products } from "./products.js";
 import { formatPrice } from "../utils/money.js";
-import { changeButtonContent } from "../main.js";
 
 export const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 renderCart();
 
+//save cart items to localstorage
 function saveToStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+//Adds item to the cart
 export function addToCart(productId) {
   const matchingItem = cart.find(cartItem => (productId === cartItem.productId));
 
@@ -22,6 +23,7 @@ export function addToCart(productId) {
   saveToStorage();
 }
 
+//Removes items from the cart
 export function removeFromCart(productId) {
   const itemIndex = cart.findIndex(cartItem => cartItem.productId === productId);
   cart.splice(itemIndex, 1);
@@ -29,10 +31,12 @@ export function removeFromCart(productId) {
   renderCart();
 }
 
+
+//Updates the cart quantity displayed on the cart icon
 export function updateCartQuantity() {
   let totalQuantity = 0;
   cart.forEach(cartItem => {
-    totalQuantity += 1
+    totalQuantity += cartItem.quantity;
   });
 
   document.querySelectorAll('.js-cart-quantity').forEach(element => {
@@ -47,6 +51,7 @@ export function updateCartQuantity() {
 }
 updateCartQuantity();
 
+//increases item quantity in the cart
 function icreaseItemQuantity(productId) {
   const matchingProduct = cart.find(cartItem => cartItem.productId === productId);
 
@@ -55,6 +60,7 @@ function icreaseItemQuantity(productId) {
   renderCart();
 }
 
+//decreases item quantity in the cart
 function decreaseItemQuantity(productId) {
   const matchingProduct = cart.find(cartItem => cartItem.productId === productId);
 
@@ -67,6 +73,7 @@ function decreaseItemQuantity(productId) {
   renderCart();
 }
 
+//Displays cart items in the cart sidebar
 export function renderCart() {
   let cartHtml = '';
 
@@ -120,6 +127,7 @@ export function renderCart() {
     button.addEventListener('click', () => {
       const productId = button.dataset.id;
       icreaseItemQuantity(productId);
+      updateCartQuantity();
       renderCartFooter();
     });
   });
@@ -128,6 +136,7 @@ export function renderCart() {
     button.addEventListener('click', () => {
       const productId = button.dataset.id;
       decreaseItemQuantity(productId);
+      updateCartQuantity();
       renderCartFooter();
     });
   });

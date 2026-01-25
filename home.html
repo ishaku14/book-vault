@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,80 +12,86 @@
   <link rel="stylesheet" href="styles/footer.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-  <header class="header">
-    <section class="top-section">
-      <div class="logo-container">
-        <img class="page-logo" src="images/icons/read-book-icon.svg" alt="">
-        <h2>Book Vault</h2>
-      </div>
-      <div class="cart-icon-container js-cart-button">
-        <img class="cart-icon" src="images/icons/cart-icon.png" alt="cart icon image">
-        <div class="cart-quantity js-cart-quantity"></div>
+  <div class="container">
+    <header class="header">
+      <section class="top-section">
+        <div class="logo-container">
+          <a href="home.html">
+            <img class="page-logo" src="images/icons/read-book-icon.svg" alt="">
+          </a>
+          <h2>Book Vault</h2>
+        </div>
+        <div class="cart-icon-container js-cart-button">
+          <img class="cart-icon" src="images/icons/cart-icon.png" alt="cart icon image">
+          <div class="cart-quantity js-cart-quantity"></div>
+        </div>
+      </section>
+    </header>
+
+    <section class="bottom-section">
+      <div class="search-container">
+        <img class="search-icon" src="images/icons/search-icon.png" alt="search icon image">
+        <input class="search-box" type="text" placeholder="search titles, authors...">
+        <img class="voice-search-icon" src="images/icons/voice-search-icon.svg" alt="voice search icon image">
       </div>
     </section>
-  </header>
 
-  <section class="bottom-section">
-    <div class="search-container">
-      <img class="search-icon" src="images/icons/search-icon.png" alt="search icon image">
-      <input class="search-box" type="text" placeholder="search titles, authors...">
-      <img class="voice-search-icon" src="images/icons/voice-search-icon.svg" alt="voice search icon image">
+    <div class="cart-backdrop js-cart-backdrop"></div>
+    <div class="cart-container js-cart-container">
+      <div class="cart-header">
+        <h3>My Cart (<span class="js-cart-quantity"></span>)</h3>
+        <button class="cart-back js-cart-back"><img src="images/icons/close-icon.svg" alt=""></button>
+      </div>
+
+      <div class="cart-item-container js-cart-item-container">
+      </div>
+
+      <div class="cart-footer js-cart-footer">
+      </div>
     </div>
-  </section>
 
-  <div class="cart-backdrop js-cart-backdrop"></div>
-  <div class="cart-container js-cart-container">
-  <div class="cart-header">
-    <h3>My Cart (<span class="js-cart-quantity"></span>)</h3>
-    <button class="cart-back js-cart-back"><img src="images/icons/close-icon.svg" alt=""></button>
-  </div>
+    <section class="category-toggle">
+      <input type="radio" name="category" id="all-category" value="all" checked>
+      <label for="all-category">All Categories</label>
 
-  <div class="cart-item-container js-cart-item-container">
-  </div>
+      <input type="radio" name="category" id="finance" value="finance">
+      <label for="finance">Finance</label>
 
-  <div class="cart-footer js-cart-footer">
-  </div>
-  
-  </div>
-  
-  <div class="category-toggle">
-    <input type="radio" name="category" id="all-category" value="all" checked>
-    <label for="all-category">All Categories</label>
+      <input type="radio" name="category" id="sci-fi" value="sci-fi">
+      <label for="sci-fi">Sci-FI</label>
 
-    <input type="radio" name="category" id="finance" value="finance">
-    <label for="finance">Finance</label>
+      <input type="radio" name="category" id="religion" value="religion">
+      <label for="religion">Religion & Spirituality</label>
 
-    <input type="radio" name="category" id="sci-fi" value="sci-fi">
-    <label for="sci-fi">Sci-FI</label>
+      <input type="radio" name="category" id="self-help" value="self-help">
+      <label for="self-help">Self-help</label>
 
-    <input type="radio" name="category" id="religion" value="religion">
-    <label for="religion">Religion & Spirituality</label>
+      <input type="radio" name="category" id="history" value="history">
+      <label for="history">History</label>
 
-    <input type="radio" name="category" id="self-help" value="self-help">
-    <label for="self-help">Self-help</label>
+      <input type="radio" name="category" id="romance" value="romance">
+      <label for="romance">Romance</label>
 
-    <input type="radio" name="category" id="history" value="history">
-    <label for="history">History</label>
-
-    <input type="radio" name="category" id="romance" value="romance">
-    <label for="romance">Romance</label>
-
-    <input type="radio" name="category" id="biography" value="biography">
-    <label for="biography">Biography</label>
-  </div>
-
-  <main class="
-  -content">
-    <!-- <h3>New Arrivals</h3> -->
-    <section class="product-card-container js-product-container">
+      <input type="radio" name="category" id="biography" value="biography">
+      <label for="biography">Biography</label>
     </section>
-    
-    <div id="modal" class="product-details-modal-overlay js-product-details-container">
-    </div>
-  </main>
+
+    <main class="
+    -content">
+      <!-- <h3>New Arrivals</h3> -->
+      <section class="product-card-container js-product-container">
+      </section>
+
+      <div id="modal" class="product-details-modal-overlay js-product-details-container">
+      </div>
+    </main>
+  </div>
 
   <footer class="footer">
     <section class="contact-section">
@@ -137,4 +144,5 @@
 
   <script type="module" src="scripts/main.js"></script>
 </body>
+
 </html>
