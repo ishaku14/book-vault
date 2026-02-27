@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.signup-form-container {
+  background-color: white;
+  width: 90vw;
+  max-width: 500px;
+  padding: 1rem;
+}
