@@ -1,5 +1,5 @@
 import { products } from "./data/products.js";
-import { cart, addToCart, removeFromCart, renderCart, updateCartQuantity, renderCartFooter } from "./data/cart.js";
+import { addToCart,  renderCart, updateCartQuantity, renderCartFooter } from "./data/cart.js";
 import { formatPrice } from './utils/money.js';
 
 const cartContainerElm = document.querySelector('.js-cart-container');

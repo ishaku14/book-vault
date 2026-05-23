@@ -1,27 +1,25 @@
-import './Header.css';
-
 export default function Header() {
   return (
-    <header className="header">
-      <section className="top-section">
-        <div className="logo-container">
+    <header className="fixed top-0 left-0 right-0 flex flex-col gap-3.5 z-100 px-4 py-2 bg-primary border-b border-b-gray-300">
+      <section className="flex justify-between items-center">
+        <div className="logo-container flex items-center justify-center gap-1.25">
           <a href="homePage.html">
-            <img className="page-logo" src="images/icons/read-book-icon.svg" alt="Book Vault Logo"/>
+            <img className="w-7.5" src="images/icons/read-book-icon.svg" alt="Book Vault Logo"/>
           </a>
           <h2 className='font-bold text-[1.4rem]'>Book Vault</h2>
         </div>
 
-        <div className="cart-icon-container js-cart-button">
-          <img className="cart-icon" src="images/icons/cart-icon.png" alt="cart icon image"/>
-          <div className="cart-quantity js-cart-quantity"></div>
+        <div className="js-cart-button relative bg-transparent border-none cursor-pointer">
+          <img className="h-7.5" src="images/icons/cart-icon.png" alt="cart icon image"/>
+          <div className="js-cart-quantity absolute -top-0.75 -left-0.75 bg-red-500 text-white border-none rounded-2xl py-px px-1 text-[0.7rem] font-bold hidden"></div>
         </div>
       </section>
 
-      <section className="bottom-section">
-        <div className="search-container">
-          <img className="search-icon" src="images/icons/search-icon.png" alt="search icon image"/>
-          <input className="search-box bg-white placeholder:text-[16px]" type="text" placeholder="search titles, authors..."/>
-          <img className="voice-search-icon" src="images/icons/voice-search-icon.svg" alt="voice search icon image"/>
+      <section className="flex items-center justify-center w-full">
+        <div className="flex relative w-full mb-2.5 max-w-150">
+          <img className="h-5 cursor-pointer absolute top-[50%] left-2.5 translate-y-[-50%]" src="images/icons/search-icon.png" alt="search icon image"/>
+          <input className="bg-white placeholder:text-[16px] w-full text-[1rem] rounded-[10px] border-gray-200 border outline-none py-2.5 px-10 focus:border-blue-500 focus:shadow-[0 6px 18px rgba(59, 130, 246, 0.15)]" type="text" placeholder="search titles, authors..."/>
+          <img className="h-5 cursor-pointer absolute top-[50%] right-2.5 translate-y-[-50%]" src="images/icons/voice-search-icon.svg" alt="voice search icon image"/>
         </div>
       </section>
     </header>

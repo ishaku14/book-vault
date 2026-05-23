@@ -1,54 +1,53 @@
-import './Footer.css';
+const FooterLinks = ({ title, list} ) => {
+    return (
+      <div>
+        <h3>{title}</h3>
+        <ul className="mt-2 list-none flex flex-col gap-2">
+          {list.map(list => (
+            <li>
+              <a className="text-black no-underline hover:underline" href="#">{list}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+const quickLinks = ['Home', 'Shop', 'Categories', 'About Us', 'Contact Us'];
+const customerService = ['FAQ', 'Shopping & Returns', 'Privacy Policy', 'Terms of Services'];
 
 export default function Footer() {
+
   return (
-    <footer className="footer">
+    <footer className="bg-footer p-8 static bottom-0 -left-5 right-5 w-full box-border">
       <section className="contact-section">
-        <div className="logo-section">
-          <img src="images/icons/read-book-icon.svg" alt="Book Vault Logo"/>
+        <div className="flex gap-1 border-b border-b-black px-4 py-4">
+          <img className="w-7" src="images/icons/read-book-icon.svg" alt="Book Vault Logo"/>
           <h3>Book Vault</h3>
         </div>
 
-        <div className="contacts">
-          <div>
-            <img src="images/icons/phone-call-white-icon.svg" alt="Phone Icon"/>
+        <div className="px-4 border-b border-b-black">
+          <div className='flex gap-2.5 mb-2.5'>
+            <img className="w-2.5" src="images/icons/phone-call-white-icon.svg" alt="Phone Icon"/>
             <span>+234 8147610262</span>
           </div>
-          <div>
-            <img src="images/icons/email-envelope-line-white-icon.svg" alt="Email Icon"/>
+          <div className='flex gap-2.5 mb-2.5'>
+            <img className='w-2.5' src="images/icons/email-envelope-line-white-icon.svg" alt="Email Icon"/>
             <span>info@bookvault.com</span>
           </div>
-          <div>
-            <img src="images/icons/location-pointer-white-icon.svg" alt="Location Icon"/>
+          <div className='flex gap-2.5 mb-2.5'>
+            <img className='w-2.5' src="images/icons/location-pointer-white-icon.svg" alt="Location Icon"/>
             <span>Ikoyi, Lagos, Nigeria</span>
           </div>
         </div>
       </section>
 
-      <section className="footer-links">
-        <div className="first">
-          <h3>Quick Links</h3>
-          <ul className="quick-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact us</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>Customer Service</h3>
-          <ul className="quick-links">
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Shopping & Returns</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-          </ul>
-        </div>
+      <section className='flex gap-8 pt-4'>
+        <FooterLinks title={'Quick Links'} list={quickLinks} />
+        <FooterLinks title={'Customer Service'} list={customerService} />
       </section>
 
-      <div className="inc-date">2026 Book Vault. All Rights Reserved.</div>
+      <div className="text-center text-[0.8rem] mt-5 text-gray-700">2026 Book Vault. All Rights Reserved.</div>
     </footer>
   )
 }
