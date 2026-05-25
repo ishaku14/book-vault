@@ -1,10 +1,10 @@
-const FooterLinks = ({ title, list} ) => {
+const FooterLinks = ({ title, list } ) => {
     return (
       <div>
         <h3>{title}</h3>
         <ul className="mt-2 list-none flex flex-col gap-2">
           {list.map(list => (
-            <li>
+            <li key={list}>
               <a className="text-black no-underline hover:underline" href="#">{list}</a>
             </li>
           ))}

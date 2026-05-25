@@ -1,4 +1,21 @@
-export default function ProductCard({ product}) {
+export default function ProductCard({ product, setCart }) {
+  function addToCart(event) {
+    const productId = event.target.dataset.productId;
+    
+    setCart(prevCart => {
+      const matchingItem = prevCart.find(item => item.productId === productId);
+
+      if(matchingItem) {
+        return prevCart.map(cartItem => cartItem.productId === productId
+          ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          : cartItem
+        )
+      }
+
+      return [...prevCart, { productId, quantity: 1 }];
+    });
+  }
+
   return (
     <div className="flex flex-col rounded-xl">
       <div className="js-image-container bg-white w-full rounded-xl aspect-3/4 overflow-hidden mb-2.5 flex cursor-pointer" data-id={product.productId}>
@@ -17,7 +34,7 @@ export default function ProductCard({ product}) {
             </span>
         </div>
 
-        <button className="add-to-cart-button js-add-button bg-accent border-none text-white font-bold text-[0.8rem] w-full rounded-[5px] flex items-center justify-center px-2.5 py-1.5 gap-1 cursor-pointer mt-auto active:opacity-[0.9]" data-product-id={product.productId}>
+        <button className="add-to-cart-button js-add-button bg-accent border-none text-white font-bold text-[0.8rem] w-full rounded-[5px] flex items-center justify-center px-2.5 py-1.5 gap-1 cursor-pointer mt-auto active:opacity-[0.9]" data-product-id={product.productId} onClick={addToCart}>
           <img className="h-4" src="images/icons/icons-cart.png" alt="Cart icon image" />
           Add to cart
         </button>

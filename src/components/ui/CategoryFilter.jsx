@@ -11,7 +11,7 @@ export default function CategoryFilter() {
   ]
 
   return (
-    <section className="px-2 flex overflow-auto gap-2.5 mb-5 scrollbar-none">
+    <section className="px-2 flex justify-between overflow-auto mb-5 scrollbar-none">
       { categories.map(category => (
         <div key={category.id} className="p-2">
           <input className="peer hidden"
