@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
 * {
-  font-family: "Google Sans", sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: rgb(240, 240, 240);
 }
 
 h1 { font-size: 2em; font-weight: 700 }
@@ -18,8 +22,4 @@ h6 { font-size: 0.67em; font-weight: 700 }
   --color-footer: rgb(226, 226, 226);
   --color-cart: rgb(248, 248, 248);
   --color-accent: #2F6BFF;
-}
-
-body {
-  background-color: rgb(240, 240, 240);
 }

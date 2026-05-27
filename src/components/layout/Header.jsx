@@ -1,4 +1,4 @@
-export default function Header({ cart }) {
+export default function Header({ cart, handleCartVisibility }) {
   let totalQuantity = 0;
 
   cart.forEach(cartItem => {
@@ -6,7 +6,7 @@ export default function Header({ cart }) {
   });
 
   return (
-    <header className="fixed top-0 left-0 right-0 flex flex-col gap-3.5 z-100 px-4 py-2 bg-primary border-b border-b-gray-300">
+    <header className="fixed top-0 left-0 right-0 flex flex-col gap-3.5 z-20 px-4 py-2 bg-primary border-b border-b-gray-300">
       <section className="flex justify-between items-center">
         <div className="logo-container flex items-center justify-center gap-1.25">
           <a href="homePage.html">
@@ -15,9 +15,9 @@ export default function Header({ cart }) {
           <h2 className='font-bold text-[1.4rem]'>Book Vault</h2>
         </div>
 
-        <div className="js-cart-button relative bg-transparent border-none cursor-pointer">
-          <img className="h-7.5" src="images/icons/cart-icon.png" alt="cart icon image"/>
-          <div className="js-cart-quantity absolute -top-0.75 -left-0.75 bg-red-600 text-white border-none rounded-2xl py-px px-1 text-[0.6rem] font-bold">{totalQuantity}</div>
+        <div className="relative bg-transparent border-none cursor-pointer" onClick={handleCartVisibility}>
+          <img className="h-7.5 pointer-events-none" src="images/icons/cart-icon.png" alt="cart icon image" />
+          <div className={`absolute -top-0.75 -left-0.75 bg-red-600 text-white border-none rounded-2xl py-px px-1 text-[0.6rem] font-bold pointer-events-none opacity-${totalQuantity? '100': '0'}`}>{totalQuantity}</div>
         </div>
       </section>
 

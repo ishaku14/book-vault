@@ -3,19 +3,22 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import CategoryFilter from "../components/ui/CategoryFilter";
 import ProductGrid from "../components/ui/ProductGrid";
+import ProductDetails from "../components/ui/ProductDetails";
+import Cart from "../components/cart/Cart";
 
-export default function HomePage({ cart, setCart }) {
+export default function HomePage({ cart, setCart, isCartOpen, setIsCartOpen, handleCartVisibility, cartQuantity }) {
   return (
     <div className="mt-36">
-      <Header cart={cart} />
+      <Header cart={cart} cartQuantity={cartQuantity} isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} handleCartVisibility={handleCartVisibility} />
+
+      <Cart cart={cart} cartQuantity={cartQuantity} setCart={setCart} products={products} isCartOpen={isCartOpen} handleCartVisibility={handleCartVisibility} />
 
       <CategoryFilter />
 
       <main className="content">
         <ProductGrid products={products} cart={cart} setCart={setCart} />
 
-        <div id="modal" className="product-details-modal-overlay js-product-details-container bg-[rgba(0,0,0,0.5)] fixed inset-0 z-10000 flex justify-center items-center p-3 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-[0.25s] ease-in-out">
-        </div>
+        <ProductDetails />
       </main>
 
       <Footer />
