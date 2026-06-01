@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import HomePage from './pages/HomePage';
 
 export default function App() {
-  const [cart, setCart] = useState([
-    // { productId: "bk-12wdjeujdkw-143yeheh", quantity: 2 },
-    // { productId: "bk-12wdjeujdkw-83yeheh", quantity: 1 },
-    // { productId: "bk-123dddkdkdd-374ruej", quantity:3 },
-    // { productId: "bk-12wdjeujdkw-123yeheh", quantity:1 }
-]);
+  const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isCartOpen ? 'hidden' : 'auto';
+    return () => {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isCartOpen]);
 
   let cartQuantity = 0;
 

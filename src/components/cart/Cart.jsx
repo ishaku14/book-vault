@@ -1,3 +1,4 @@
+import formatPrice from "../../utils/money";
 import CartItems from "./CartItems";
 
 export default function Cart({ products, cart, cartQuantity, setCart, isCartOpen, handleCartVisibility }) {
@@ -30,15 +31,15 @@ export default function Cart({ products, cart, cartQuantity, setCart, isCartOpen
             <div className="cart-summary">
               <div className="flex justify-between mb-1.5">
                 <span className="text-[1.1rem]">Delivery Fee:</span>
-                <span className="summary-value delivery-fee">{deliveryFee}</span>
+                <span className="summary-value delivery-fee">{formatPrice(deliveryFee)}</span>
               </div>
               <div className="flex justify-between mb-1.5 border-b border-b-black pb-1">
                 <span className="text-[1.1rem]">Subtotal:</span>
-                <span className="text-[1rem] font-medium text-black">{productPrice}</span>
+                <span className="text-[1rem] font-medium text-black">{formatPrice(productPrice)}</span>
               </div>
               <div className="flex justify-between mb-5">
                 <span className="text-[1.1rem] font-bold">Total:</span>
-                <span className="text-[1rem] font-bold">{totalPrice}</span>
+                <span className="text-[1rem] font-bold">{formatPrice(totalPrice)}</span>
               </div>
             </div>
             

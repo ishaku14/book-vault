@@ -3,7 +3,6 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import CategoryFilter from "../components/ui/CategoryFilter";
 import ProductGrid from "../components/ui/ProductGrid";
-import ProductDetails from "../components/ui/ProductDetails";
 import Cart from "../components/cart/Cart";
 
 export default function HomePage({ cart, setCart, isCartOpen, setIsCartOpen, handleCartVisibility, cartQuantity }) {
@@ -17,8 +16,6 @@ export default function HomePage({ cart, setCart, isCartOpen, setIsCartOpen, han
 
       <main className="content">
         <ProductGrid products={products} cart={cart} setCart={setCart} />
-
-        <ProductDetails />
       </main>
 
       <Footer />
