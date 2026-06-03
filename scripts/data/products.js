@@ -162,17 +162,17 @@ export const products = [
     deliveryFee: 400,
     category: 'religion',
     description: "This book was written by Andrew Wommack to explain the three-part nature of man from a Christian perspective. It was created to help believers understand how spiritual growth works."
-  },
-  
-  {
-    productId: 'bk-12wdjeujdkw-143yeheh',
-    image: 'images/products/tongues.webp',
-    title: 'Tongues Beyond The Upper Room',
-    author: 'Kenneth E. Hagin',
-    price: 5500,
-    rating: 4.5,
-    deliveryFee: 500,
-    category: 'religion',
-    description: "Kenneth E. Hagin wrote this book to explain the biblical purpose of speaking in tongues. It was written to clear confusion about Pentecostal experience."
   }
+  
+  // {
+  //   productId: 'bk-12wdjeujdkw-143yeheh',
+  //   image: 'images/products/tongues.webp',
+  //   title: 'Tongues Beyond The Upper Room',
+  //   author: 'Kenneth E. Hagin',
+  //   price: 5500,
+  //   rating: 4.5,
+  //   deliveryFee: 500,
+  //   category: 'religion',
+  //   description: "Kenneth E. Hagin wrote this book to explain the biblical purpose of speaking in tongues. It was written to clear confusion about Pentecostal experience."
+  // }
 ];

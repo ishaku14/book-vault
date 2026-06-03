@@ -18,8 +18,8 @@ export default function Cart({ products, cart, cartQuantity, setCart, isCartOpen
 
   return (
     <>
-      <div className={`fixed inset-0 backdrop-blur z-50 bg-black/50 opacity-${isCartOpen? '100': '0'} pointer-events-${isCartOpen? 'auto' : 'none'}`}>
-        <div className={`bg-cart fixed top-0 right-0 h-full w-full max-w-112.5 z-50 flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.25, 1, 0.5, 1)] translate-x-${isCartOpen? '0' : '[110%]'}`}>
+      <div className={`fixed inset-0 backdrop-blur z-50 bg-black/50 ${isCartOpen ? 'opacity-100 pointer-events-auto' :'opacity-0 pointer-events-none'}`}>
+        <div className={`bg-cart fixed top-0 right-0 h-full w-full max-w-112.5 z-50 flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.25, 1, 0.5, 1)] ${isCartOpen ? 'translate-x-0' : 'translate-x-[110%]'}`}>
           <div className="bg-white flex justify-between p-4 border-b border-b-gray-200 shrink-0">
             <h3>My Cart (<span className="text-[1.1rem]">{cartQuantity}</span>)</h3>
             <button className="js-cart-back bg-white border-none cursor-pointer px-4 py-2" onClick={handleCartVisibility}><img className="w-3.5" src="images/icons/close-icon.svg" alt=""/></button>

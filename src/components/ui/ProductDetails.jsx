@@ -2,7 +2,7 @@ import formatPrice from '../../utils/money';
 
 export default function ProductDetails({ product, addToCart, renderProductDetails, detailsOpen }) {
   return (
-    <div id="modal" className={`bg-[rgba(0,0,0,0.5)] fixed inset-0 z-10000 flex justify-center items-center p-3 backdrop-blur-sm opacity-${detailsOpen ? '100' : '0'} pointer-events-${detailsOpen ? 'auto' : 'none'} transition-opacity duration-[0.25s] ease-in-out`}>
+    <div className={`bg-[rgba(0,0,0,0.5)] fixed inset-0 z-10000 flex justify-center items-center p-3 backdrop-blur-sm ${detailsOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} transition-opacity duration-[0.25s] ease-in-out`}>
       <div className="bg-white rounded-[10px] w-[95%] max-w-170 p-4 flex flex-col h-auto overflow-visible transition-max-height duration-[0.25s] ease-in-out">
         <button className="bg-white border-none px-1.5 py-3 self-end text-[1.3rem] cursor-pointer" onClick={renderProductDetails}><img className="h-3.5 pointer-events-none" src="images/icons/close-icon.svg" alt="" /></button>
         <div className="m-auto w-30">
@@ -19,7 +19,7 @@ export default function ProductDetails({ product, addToCart, renderProductDetail
           <img className="h-3.5" src="images/icons/star-rating.png" alt="" />
         </div>
             
-        <div className="desc-section">
+        <div>
           <h3 className="mb-2.5">Description</h3>
           <p className="text-gray-500 mb-5">
             {product.description}

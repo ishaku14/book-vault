@@ -26,7 +26,12 @@ export default function App() {
 
   return (
     <>
-      <HomePage cart={cart} setCart={setCart} isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} handleCartVisibility={handleCartVisibility} cartQuantity={cartQuantity} />
+      <HomePage
+        cart={cart}
+        setCart={setCart}
+        isCartOpen={isCartOpen}
+        setIsCartOpen={setIsCartOpen} handleCartVisibility={handleCartVisibility} cartQuantity={cartQuantity} 
+      />
     </>
   )
 }

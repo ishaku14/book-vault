@@ -2,7 +2,7 @@ import formatPrice from '../../utils/money';
 
 export default function CartItems({ products, cart, setCart }) {
   function increaseQuantity(e) {
-    const productId = e.target.dataset.productId;
+    const productId = e.currentTarget.dataset.productId;
 
     setCart(prevCart => prevCart.map(cartItem => 
       cartItem.productId === productId
@@ -13,7 +13,7 @@ export default function CartItems({ products, cart, setCart }) {
   }
 
   function decreaseQuantity(e) {
-    const productId = e.target.dataset.productId;
+    const productId = e.currentTarget.dataset.productId;
 
     setCart(prevCart => prevCart.map(cartItem => 
       cartItem.productId === productId
@@ -23,7 +23,7 @@ export default function CartItems({ products, cart, setCart }) {
   }
 
   function deleteCartItem(e) {
-    const productId = e.target.dataset.productId;
+    const productId = e.currentTarget.dataset.productId;
 
     setCart(prevCart => prevCart.filter(cartItem => cartItem.productId !== productId));
   }

@@ -13,7 +13,8 @@ export default function ProductCard({ product, setCart }) {
   }, [detailsOpen]);
 
   function addToCart(event) {
-    const productId = event.target.dataset.productId;
+    event.stopPropagation();
+    const productId = event.currentTarget.dataset.productId;
     
     setCart(prevCart => {
       const matchingItem = prevCart.find(item => item.productId === productId);
@@ -30,17 +31,19 @@ export default function ProductCard({ product, setCart }) {
   }
 
   function renderProductDetails() {
-    // detailsOpen ? setDetailsOpen(false): setDetailsOpen(true);
-    if(detailsOpen) {
-      setDetailsOpen(false);
-    } else {
-      setDetailsOpen(true);
-    }
+    setDetailsOpen(prev => !prev);
   }
 
   return (
     <>
-      <ProductDetails product={product} renderProductDetails={renderProductDetails} detailsOpen={detailsOpen} addToCart={addToCart} />
+      {detailsOpen && (
+        <ProductDetails
+          product={product}
+          renderProductDetails={renderProductDetails}
+          detailsOpen={detailsOpen}
+          addToCart={addToCart} 
+        />
+      )}
 
       <div className="flex flex-col rounded-xl">
         <div className="bg-white w-full rounded-xl aspect-3/4 overflow-hidden mb-2.5 flex cursor-pointer " data-product-id={product.productId} onClick={renderProductDetails}>
