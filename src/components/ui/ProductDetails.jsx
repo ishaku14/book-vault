@@ -29,7 +29,7 @@ export default function ProductDetails({ product, addToCart, renderProductDetail
         <div className="flex items-center justify-between gap-2.5">
           <div className="flex flex-col justify-center items-center">
             <span className="text-[0.8rem] text-gray-500">Total Price</span>
-            <strong className="text-[1.2rem]">{formatPrice(product.price)}</strong>
+            <strong className="text-[1.2rem] text-accent">{formatPrice(product.price)}</strong>
           </div>
           <button className="flex items-center justify-between gap-2.5 bg-accent px-2.5 py-2.5 border-none rounded-[10px] text-white font-bold text-[1rem] cursor-pointer active:opacity-80" data-product-id={product.productId} onClick={addToCart}>
             <img className="h-4 pointer-events-none" src="images/icons/icons-cart.png" alt="a cart icon image" />
