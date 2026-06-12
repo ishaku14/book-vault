@@ -1,17 +1,10 @@
 import ProductCard from "./ProductCard";
 
-export default function ProductGrid({ products, cart, setCart, category }) {
-  let filteredProducts = products;
-  if(category !== 'all') {
-    filteredProducts = products.filter(product => {
-      return product.category === category;
-    });
-  }
-
+export default function ProductGrid({ products, cart, setCart }) {
   return (
     <section className="product-card-container js-product-container px-5 w-full bg-transparent grid gap-x-5 gap-y-10 items-stretch mb-10 grid-cols-2 max-sm:grid-cols-2 min-[501px]:max-[800px]:grid-cols-3 min-[801px]:max-[1024px]:grid-cols-4 min-[1025px]:grid-cols-5">
-      {filteredProducts.length > 0 ? (
-        filteredProducts.map((product) => 
+      {products.length > 0 ? (
+        products.map((product) => 
           (<ProductCard
             key={product.productId}
             product={product}

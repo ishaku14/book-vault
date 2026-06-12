@@ -8,6 +8,7 @@ export const products = [
     rating: 4.9,
     deliveryFee: 500,
     category: 'self-help',
+    keywords: ['james clear', 'atomic habits', 'tiny changes', 'discipline', 'self-improvement', 'self help'],
     description: "Atomic Habits was written by James Clear to show how small daily behaviors compound into life-changing results. The book was created to help people break bad habits and build good ones through practical systems rather than motivation. It has sold millions of copies worldwide and is praised for its clear, science-backed approach."
   },
   {
@@ -19,6 +20,7 @@ export const products = [
     rating: 4.8,
     deliveryFee: 500,
     category: 'self-help',
+    keywords: ['darren hardy', 'compound effect', 'consistency', 'self help', 'growth', 'small actions'],
     description: "The Compound Effect was written by Darren Hardy to teach that success comes from consistent small actions over time. Hardy wrote it to counter the idea of overnight success and to promote discipline and accountability. The book has become a bestseller with hundreds of thousands of copies sold."
   },
 
@@ -31,6 +33,7 @@ export const products = [
     rating: 4.6,
     deliveryFee: 750,
     category: 'finance',
+    keywords: ['money', 'psychology', 'wealth', 'investing', 'personal finance', 'morgan housel', 'behavior', 'psychology of money', 'greed', 'financial mindset', 'savings', 'decisions', 'emotions'],
     description: "Morgan Housel wrote this book to explain that money decisions are emotional more than mathematical. It was written to share timeless lessons about wealth, greed, and happiness. The book became a global bestseller with millions of readers."
   },
 
@@ -43,6 +46,7 @@ export const products = [
     rating: 4.8,
     deliveryFee: 400,
     category: 'finance',
+    keywords: ['investing', 'value investing', 'benjamin graham', 'stock market', 'warren buffett', 'finance', 'wealth', 'shares', 'speculation', 'portfolio', 'margin of safety', 'intelligent investor', 'economics'],
     description: "Benjamin Graham wrote this classic to teach value investing principles. It was created after the Great Depression to help investors avoid speculation. The book has sold millions of copies and influenced investors like Warren Buffett."
   },
   {
@@ -54,6 +58,7 @@ export const products = [
     rating: 4.7,
     deliveryFee: 300,
     category: 'finance',
+    keywords: ['wealth', 'mindset', 'napoleon hill', 'success', 'riches', 'think and grow rich', 'achievement', 'desire', 'visualization', 'ambition', 'motivation', 'law of attraction'],
     description: "Napoleon Hill wrote this book after studying successful people like Andrew Carnegie. It was written to reveal the mindset behind wealth and achievement. The book has sold over 100 million copies since its release."
   },
 
@@ -66,6 +71,7 @@ export const products = [
     rating: 4.3,
     deliveryFee: 250,
     category: 'finance',
+    keywords: ['profit', 'business', 'entrepreneurship', 'accounting', 'cash flow', 'mike michalowicz', 'small business', 'revenue', 'financial system', 'profit first', 'budgeting', 'startup'],
     description: "Profit First was written by Mike Michalowicz to help businesses become profitable from day one. It was written to reverse traditional accounting logic and prioritize profit. The book has sold hundreds of thousands of copies among entrepreneurs."
   },
 
@@ -78,6 +84,7 @@ export const products = [
     rating: 4.4,
     deliveryFee: 700,
     category: 'religion',
+    keywords: ['prayer', 'hearing god', 'mark virkler', 'christianity', 'spirituality', 'faith', 'holy spirit', 'spiritual growth', 'prophetic', 'devotional', 'God\'s voice',],
     description: "Mark Virkler wrote this book to help believers recognize God’s voice. It was written as a practical guide to spiritual communication. The book has sold widely through Christian training programs."
   },
 
@@ -90,6 +97,7 @@ export const products = [
     rating: 4.6,
     deliveryFee: 400,
     category: 'history',
+    keywords: ['northern ireland', 'IRA', 'conflict', 'patrick radden keefe', 'say nothing', 'true crime', 'history', 'politics', 'investigative', 'troubles', 'journalism', 'violence', 'british', 'irish', 'war'],
     description: "Patrick Radden Keefe wrote Say Nothing to document the human stories behind the Northern Ireland conflict. It was written after years of investigative research. The book became an award-winning international bestseller."
   },
   
@@ -102,6 +110,7 @@ export const products = [
     deliveryFee: 250,
     rating: 4.2,
     category: 'religion',
+    keywords: ['da vinci', 'apologetics', 'erwin lutzer', 'christianity', 'bible', 'jesus', 'deception', 'dan brown', 'theology', 'faith', 'history of christianity', 'church', 'truth', 'gnosticism'],
     description: "The Da Vinci Deception was written by Erwin W. Lutzer to respond to popular claims that challenge historic Christian beliefs. It was written to defend the reliability of the Bible and the identity of Jesus Christ. The book reached a wide Christian audience with strong influence in apologetics circles."
   },
   
@@ -114,6 +123,7 @@ export const products = [
     deliveryFee: 500,
     rating: 4.,
     category: 'finance',
+    keywords: ['rich dad poor dad', 'robert kiyosaki', 'financial literacy', 'assets', 'liabilities', 'passive income', 'investing', 'money', 'wealth', 'real estate', 'financial freedom', 'entrepreneurship', 'cash flow'],
      description: "Rich Dad Poor Dad was written by Robert Kiyosaki to teach financial literacy through the contrast of two father figures. The book was created to change how people think about money, assets, and liabilities. It has sold tens of millions of copies and remains one of the most influential personal finance books ever."
   },
 
@@ -126,6 +136,7 @@ export const products = [
     rating: 4.8,
     deliveryFee: 800,
     category: 'finance',
+    keywords: ['ramit sethi', 'personal finance', 'budgeting', 'investing', 'savings', 'credit cards', 'millennials', 'financial freedom', 'conscious spending', 'automation', 'wealth', 'money management', 'young adults'],
     description: "Ramit Sethi wrote this book to give young people a practical, no-guilt approach to managing money. It was written to simplify budgeting, investing, and conscious spending. The book has sold over a million copies and is updated for modern financial tools."
   },
 
@@ -138,6 +149,7 @@ export const products = [
     rating: 4.7,
     deliveryFee: 500,
     category: 'finance',
+    keywords: ['dave ramsey', 'debt', 'budgeting', 'financial freedom', 'baby steps', 'savings', 'money makeover', 'personal finance', 'emergency fund', 'investing', 'debt free', 'wealth building'],
     description: "The Total Money Makeover was written by Dave Ramsey to help people escape debt and build financial freedom. It was created from Ramsey’s personal failure and recovery story. The book has sold millions of copies and inspired the popular baby-steps method.."
   },
 
@@ -150,6 +162,7 @@ export const products = [
     rating: 4.5,
     deliveryFee: 500,
     category: 'religion',
+    keywords: ['andrew wommack', 'authority', 'christianity', 'faith', 'prayer', 'spiritual warfare', 'believer', 'jesus', 'holy spirit', 'church', 'christian living', 'power', 'identity in christ'],
     description: "Andrew Wommack wrote The Believer's Authority to teach Christians about their spiritual identity in Christ. The book was written to encourage confidence in prayer and faith. It has sold widely within Christian communities around the world."
   },
   {
@@ -161,18 +174,19 @@ export const products = [
     rating: 4.4,
     deliveryFee: 400,
     category: 'religion',
+    keywords: ['andrew wommack', 'spirit soul body', 'christianity', 'spiritual growth', 'human nature', 'faith', 'healing', 'sanctification', 'holy spirit', 'christian living', 'mind', 'renewal', 'bible'],
     description: "This book was written by Andrew Wommack to explain the three-part nature of man from a Christian perspective. It was created to help believers understand how spiritual growth works."
+  },
+  {
+    productId: 'bk-12wdjeujdkw-143yeheh',
+    image: 'images/products/tongues.webp',
+    title: 'Tongues Beyond The Upper Room',
+    author: 'Kenneth E. Hagin',
+    price: 5500,
+    rating: 4.5,
+    deliveryFee: 500,
+    category: 'religion',
+    keywords: ['kenneth hagin', 'tongues', 'tongues beyond the upper room', 'speaking in tongues', 'holy spirit'],
+    description: "Kenneth E. Hagin wrote this book to explain the biblical purpose of speaking in tongues. It was written to clear confusion about Pentecostal experience."
   }
-  
-  // {
-  //   productId: 'bk-12wdjeujdkw-143yeheh',
-  //   image: 'images/products/tongues.webp',
-  //   title: 'Tongues Beyond The Upper Room',
-  //   author: 'Kenneth E. Hagin',
-  //   price: 5500,
-  //   rating: 4.5,
-  //   deliveryFee: 500,
-  //   category: 'religion',
-  //   description: "Kenneth E. Hagin wrote this book to explain the biblical purpose of speaking in tongues. It was written to clear confusion about Pentecostal experience."
-  // }
 ];
