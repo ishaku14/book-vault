@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import formatPrice from "../../utils/money";
 import ProductDetails from "./ProductDetails";
+import useAddToCart from '../../hooks/useAddToCart';
 
 export default function ProductCard({ product, setCart }) {
   const [detailsOpen, setDetailsOpen] = useState(false);
@@ -29,6 +30,8 @@ export default function ProductCard({ product, setCart }) {
       return [...prevCart, { productId, quantity: 1 }];
     });
   }
+
+  const { added, handleAddToCart } = useAddToCart(addToCart);
 
   function renderProductDetails() {
     setDetailsOpen(prev => !prev);
@@ -62,9 +65,18 @@ export default function ProductCard({ product, setCart }) {
               </span>
           </div>
 
-          <button className="bg-accent border-none text-white font-bold text-[0.8rem] w-full rounded-[5px] flex items-center justify-center px-2.5 py-1.5 gap-1 cursor-pointer mt-auto active:opacity-[0.9]" data-product-id={product.productId} onClick={addToCart}>
-            <img className="h-4" src="images/icons/icons-cart.png" alt="Cart icon image" />
-            Add to cart
+          <button className="bg-accent border-none text-white font-bold text-[0.8rem] w-full rounded-[5px] flex items-center justify-center px-2.5 py-1.5 gap-1 cursor-pointer mt-auto active:opacity-[0.9]" data-product-id={product.productId} onClick={(event) => {handleAddToCart(event)}}>
+            {added ? (
+              <>
+                <img className="w-3" src="images/icons/checkmark-icon.svg" alt="checkmark icon" />
+                Added
+              </>
+            ) : (
+              <>
+                <img className="h-4" src="images/icons/icons-cart.png" alt="Cart icon image" />
+                Add to cart
+              </>
+            )}
           </button>
         </div>
       </div>

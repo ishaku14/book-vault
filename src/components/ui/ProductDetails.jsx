@@ -1,6 +1,9 @@
 import formatPrice from '../../utils/money';
+import useAddToCart from '../../hooks/useAddToCart';
 
 export default function ProductDetails({ product, addToCart, renderProductDetails, detailsOpen }) {
+  const { added, handleAddToCart } = useAddToCart(addToCart)
+
   return (
     <div className={`bg-[rgba(0,0,0,0.5)] fixed inset-0 z-10000 flex justify-center items-center p-3 backdrop-blur-sm ${detailsOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} transition-opacity duration-[0.25s] ease-in-out`}>
       <div className="bg-white rounded-[10px] w-[95%] max-w-170 p-4 flex flex-col h-auto overflow-visible transition-max-height duration-[0.25s] ease-in-out">
@@ -31,9 +34,18 @@ export default function ProductDetails({ product, addToCart, renderProductDetail
             <span className="text-[0.8rem] text-gray-500">Total Price</span>
             <strong className="text-[1.2rem] text-accent">{formatPrice(product.price)}</strong>
           </div>
-          <button className="flex items-center justify-between gap-2.5 bg-accent px-2.5 py-2.5 border-none rounded-[10px] text-white font-bold text-[1rem] cursor-pointer active:opacity-80" data-product-id={product.productId} onClick={addToCart}>
-            <img className="h-4 pointer-events-none" src="images/icons/icons-cart.png" alt="a cart icon image" />
-                Add to Cart
+          <button className="flex items-center justify-between gap-2.5 bg-accent px-2.5 py-2.5 border-none rounded-[10px] text-white font-bold text-[1rem] cursor-pointer active:opacity-80" data-product-id={product.productId} onClick={(event) => {handleAddToCart(event)}}>
+            {added ? (
+              <>
+                <img className="w-3" src="images/icons/checkmark-icon.svg" alt="checkmark icon" />
+                Added
+              </>
+            ) : (
+              <>
+                <img className="h-4" src="images/icons/icons-cart.png" alt="Cart icon image" />
+                Add to cart
+              </>
+            )}
           </button>
         </div>
       </div>

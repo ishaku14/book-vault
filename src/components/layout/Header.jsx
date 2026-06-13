@@ -34,7 +34,7 @@ export default function Header({ cart, handleCartVisibility, query, setQuery, ha
       <section className="flex items-center justify-center w-full">
         <div className="flex relative w-full mb-2.5 max-w-150">
           <img className="h-5 cursor-pointer absolute top-[50%] left-2.5 translate-y-[-50%]" src="images/icons/search-icon.png" alt="search icon image" onClick={handleSearch}/>
-          <input className="bg-white placeholder:text-[16px] w-full text-[1rem] rounded-[10px] border-gray-200 border outline-none py-2.5 px-10 focus:border-blue-500 focus:shadow-[0_6px_18px_rgba(59, 130, 246, 0.15)]" type="text" placeholder="search titles, authors..." onKeyDown={handleKeyDown} onChange={getSearchInputValue} value={query}/>
+          <input className="bg-white placeholder:text-[16px] w-full text-[1rem] rounded-[10px] border-gray-200 border outline-none py-2.5 px-10  focus:border-accent focus:ring-3 focus:ring-accent/20 transition-all" type="text" placeholder="search titles, authors..." onKeyDown={handleKeyDown} onChange={getSearchInputValue} value={query}/>
           <img className="h-5 cursor-pointer absolute top-[50%] right-2.5 translate-y-[-50%]" src="images/icons/voice-search-icon.svg" alt="voice search icon image"/>
         </div>
       </section>
