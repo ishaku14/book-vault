@@ -16,10 +16,14 @@ h5 { font-size: 0.83em; font-weight: 700 }
 h6 { font-size: 0.67em; font-weight: 700 }
 
 @theme {
-  --breakpoint-sm: 500px;
-  --breakpoint-md: 800px;
+  --breakpoint-xs: 300px;
+  /* --breakpoint-sm: 500px;
+  --breakpoint-md: 800px; */
   --color-primary: rgb(240, 240, 240);
   --color-footer: rgb(226, 226, 226);
   --color-cart: rgb(248, 248, 248);
   --color-accent: #2F6BFF;
+  --color-footer-bg: #04173B;
+  --color-footer-text: #AAB4C5;
+  --color-divider: #2E466F;
 }
